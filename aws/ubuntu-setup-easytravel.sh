@@ -198,20 +198,20 @@ installReverseProxy() {
   IP_ADDR=$(ip addr show eth0 | grep "inet\b" | awk '{print $2}' | cut -d/ -f1)
   #
   echo 'upstream angular {
-    server   $IP_ADDR:9080;
+    server   '$IP_ADDR':9080;
 }
 
 upstream admin {
-    server   $IP_ADDR:8094;
+    server   '$IP_ADDR':8094;
 }
 upstream classic {
-    server   $IP_ADDR:8079;
+    server   '$IP_ADDR':8079;
 }
 upstream rest {
-    server   $IP_ADDR:8091;
+    server   '$IP_ADDR':8091;
 }
 upstream 3rdparty {
-    server   $IP_ADDR:8092;
+    server   '$IP_ADDR':8092;
 }
 
 server {
